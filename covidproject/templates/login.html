@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration From</title>
+    <style>
+    body{
+    background-image:url('img2.jpg');height: 100%;background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+   form {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px 10px;
+  background: #DFDFDF ;
+  border-radius: 8px;}
+
+  input[type=text], input[type=password],input[type=email],input[type=phno] {
+  width: 500px;
+  padding: 15px;
+  margin: 5px  22px ;
+  border: none;
+  background: #f1f1f1;}
+
+  button[type=submit]{
+   background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  }
+    </style>
+</head>
+<body>
+<h1 align="center">Login</h1>
+<form method="post" action="login">
+    {% csrf_token %}
+    <label>User Name</label>
+    <input type="text" name="username" placeholder="Enter User Name"> <br>
+    <label>Password </label><br>
+    <input type="password" name="password" placeholder="Enter password"> <br>
+    <button type="submit" name="dd">Login </button><br>
+    {% for msg in messages %}
+<h2 style="color:red;">{{msg}}</h2>
+{% endfor %}
+</form>
+
+</body>
+</html>

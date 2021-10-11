@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration From</title>
+    <style>
+    body{
+    background-image:url('img2.jpg');height: 100%;background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+   form {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px 10px;
+  background: #DFDFDF ;
+  border-radius: 8px;}
+
+  input[type=text], input[type=password],input[type=email],input[type=phno] {
+  width: 500px;
+  padding: 15px;
+  margin: 5px  22px ;
+  border: none;
+  background: #f1f1f1;}
+
+  button[type=submit]{
+   background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  }
+    </style>
+</head>
+<body>
+<h1 align="center">Register</h1>
+<form method="post" action="register">
+    {% csrf_token %}
+    <label>User Name</label>
+    <input type="text" name="username" placeholder="Enter User Name"> <br>
+    <label>First name </label><br>
+    <input type="text" name="first_name" placeholder="Enter first name"><br>
+    <label>Last name </label><br>
+    <input type="text" name="last_name" placeholder="Enter last name"><br>
+    <label>Email </label><br>
+    <input type="email" name="email" placeholder="Email"> <br>
+    <label>Password</label><br>
+    <input type="password" name="password" placeholder="Enter password"><br>
+    <label>Conform Password</label><br>
+    <input type="password" name="password1" placeholder="confirm password"><br>
+    <button type="submit" name="dd">Register </button>
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
